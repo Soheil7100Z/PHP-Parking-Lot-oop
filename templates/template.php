@@ -41,6 +41,48 @@
 
           <button class="btn btn-primary">Einparken</button>
       </form>
+
+      <hr>
+
+      <form action="index.php?a=remove" method="post" class="mb-4">
+          <div class="mb-3">
+              <input
+                  type="text"
+                  name="kennzeichen"
+                  class="form-control"
+                  placeholder="Kennzeichen"
+                  required
+              >
+          </div>
+
+          <button class="btn btn-danger">Ausparken</button>
+      </form>
+      
+      <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
+        isset($_GET['a']) &&
+        $_GET['a'] === 'remove') {
+          echo '<p>Removing is working</p>';
+        }
+      ?>
+
+
+      <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
+        isset($_GET['a']) &&
+        $_GET['a'] === 'add') {
+        echo'
+        <table border="1">
+          <tbody>
+              <tr>
+                  <td>Test 1</td>
+                  <td>Test 2</td>
+                  <td>Test 3</td>
+              </tr>
+          </tbody>
+        </table>';
+        }
+      ?>
     </div>
 </body>
 </html>
